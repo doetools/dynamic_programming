@@ -4,7 +4,20 @@ theme:
   name: "material"
 
 plugins:
-  - mkdocstrings
+  - mkdocstrings:
+      enabled: !ENV [ENABLE_MKDOCSTRINGS, true]
+      custom_templates: templates
+      default_handler: python
+      handlers:
+        python:
+          options:
+            show_source: true
 
 nav:
   - index.md
+  - max-stock-profit-problem.md
+  - house-rob-problem.md
+  - longest-increasing-subquence.md
+
+watch:
+  - ./dp
